@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: 0
+  replicas: 5
   revisionHistoryLimit: 3
   selector:
     matchLabels:
