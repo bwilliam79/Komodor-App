@@ -26,7 +26,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx:latest
+      - image: nginx:latestbroken
         name: nginx
         ports:
         - containerPort: 80
@@ -36,4 +36,4 @@ spec:
       volumes:
       - name: nginx-index-file
         configMap:
-          name: index-html-configmapasdads
+          name: index-html-configmap
