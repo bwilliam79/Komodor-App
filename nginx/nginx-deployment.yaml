@@ -34,4 +34,4 @@ spec:
         - name: nginx-index-file
           mountPath: /usr/share/nginx/html/
       volumes:
-        name: nginx-index-file
+      - name: nginx-index-file
