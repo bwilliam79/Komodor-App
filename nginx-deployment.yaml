@@ -8,8 +8,8 @@ spec:
     targetPort: 80
   selector:
     app: nginx
-    apiVersion: apps/v1
 ---
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
@@ -19,8 +19,6 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -31,7 +29,6 @@ spec:
         name: nginx
         ports:
         - containerPort: 80
-          name: nginx
   volumeMounts:
     name: nginx-index-file
     mountPath: /usr/share/nginx/html/
