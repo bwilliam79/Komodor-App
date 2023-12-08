@@ -4,9 +4,9 @@ metadata:
 name: index-html-configmap
 namespace: default
 data:
-index.html:|
-<!DOCTYPE html>
-<html>
+  index.html:
+    <!DOCTYPE html>
+    <html>
     <head>
         <title>Komodor Demo</title>
     </head>
@@ -15,4 +15,4 @@ index.html:|
         <h1>Today is December 8, 2023!</h1>
         </center>
     </body>
-</html>
+    </html>
