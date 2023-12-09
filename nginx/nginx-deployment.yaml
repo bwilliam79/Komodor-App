@@ -37,3 +37,7 @@ spec:
       - name: nginx-index-file
         configMap:
           name: index-html-configmap
+      volumes:
+      - name: nginx-persistent-storage
+        persistentVolumeClaim:
+          claimName: nginx-pvc
