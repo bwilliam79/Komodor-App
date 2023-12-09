@@ -14,9 +14,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  annotations:
-    app.komodor.com/app: https://github.com/bwilliam79/Komodor-App
-    app.komodor.com/app.ref: 5f294c76688eaa331cc4a33f15425241eee39446
 spec:
   replicas: 5
   revisionHistoryLimit: 3
