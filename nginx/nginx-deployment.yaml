@@ -18,7 +18,7 @@ metadata:
     app.komodor.com/app: https://github.com/bwilliam79/Komodor-App
     app.komodor.com/app.ref: 5f294c76688eaa331cc4a33f15425241eee39446
 spec:
-  replicas: 5
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -29,7 +29,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx:latest
+      - image: nginx:latests
         name: nginx
         ports:
         - containerPort: 80
