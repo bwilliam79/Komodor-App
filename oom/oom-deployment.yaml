@@ -1,25 +1,15 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: badapp
 spec:
-  selector:
-    matchLabels:
-      app: badapp
-  template:
-    metadata:
-      labels:
-        app: badapp
-    spec:
-      containers:
-      - image: polinux/stress
-        name: badapp
-      resources:
-        requests:
-          memory: "50M"
-        limits:
-          memory: "100M"
-      command: ["echo"]
-      args: ["--cpu", "4"]
-#      command: ["stress"]
-#      args: ["--cpu", "4", "--vm", "1", "--vm-bytes", "250M", "--vm-hang", "1"]
+  containers:
+  - image: polinux/stress
+    name: badapp
+  resources:
+    requests:
+      memory: "100Mi"
+    limits:
+      memory: "200Mi"
+  command: ["stress"]
+  args: ["--vm", "1", "--vm-bytes", "250M", "--vm-hang", "1"]
