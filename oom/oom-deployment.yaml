@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: badapp
   containers:
   - image: polinux/stress
     name: badapp
