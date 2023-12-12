@@ -8,7 +8,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: badapp
-  namespace: oom-simulator
 spec:
   selector:
     matchLabels:
