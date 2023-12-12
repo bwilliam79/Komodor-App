@@ -6,6 +6,10 @@ spec:
   selector:
     matchLabels:
       app: badapp
+  template:
+    metadata:
+      labels:
+        app: badapp
   containers:
   - image: polinux/stress
     name: badapp
