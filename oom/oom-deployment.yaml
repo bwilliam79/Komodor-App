@@ -9,7 +9,7 @@ kind: Deployment
 metadata:
   name: badapp
   namespace: oom-simulator
-  spec:
+spec:
   selector:
     matchLabels:
       app: badapp
