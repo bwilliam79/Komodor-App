@@ -1,8 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: badapp
 spec:
+  selector:
+    matchLabels:
+      app: nginx
   containers:
   - image: polinux/stress
     name: badapp
