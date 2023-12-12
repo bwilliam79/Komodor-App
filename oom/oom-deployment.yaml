@@ -1,26 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javaapp
+  name: badapp
 spec:
-  replicas: 3
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: javaapp
+      app: badapp
   template:
     metadata:
       labels:
-        app: javaapp
+        app: badapp
     spec:
       containers:
-      - image: valentinomiazzo/jvm-memory-test:latest
-        name: javaapp
+      - image: polinux/stress
+        name: badapp
       resources:
         requests:
-          memory: "64M"
-      env:
-        - name: ALLOC_HEAP_MB
-          value: 1
-        - name: MAX_HEAP_SIZE_MB
-          value: 256
+          memory: "100M"
+        limits:
+          memory: "200M"
+      command: ["stress"]
+      args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
