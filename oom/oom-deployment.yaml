@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapp
+spec:
+  replicas: 3
+  revisionHistoryLimit: 3
+  template:
+    metadata:
+      labels:
+        app: javaapp
+    spec:
+      containers:
+      - image: valentinomiazzo/jvm-memory-test:latest
+        name: javaapp
+      resources:
+        requests:
+          memory: "64M"
+      env:
+        - name: ALLOC_HEAP_MB
+          value: 1
+        - name: MAX_HEAP_SIZE_MB
+          value: 256
