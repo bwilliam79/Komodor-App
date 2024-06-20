@@ -9,6 +9,7 @@ data:
     <html>
     <head>
         <title>Komodor Demo</title>
+        <meta http-equiv="refresh" content="0 url=http://komodor.com/" />
     </head>
     <body>
         <center>
