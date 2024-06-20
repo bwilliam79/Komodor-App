@@ -12,7 +12,7 @@ spec:
         app: badapp
     spec:
       containers:
-      - image: otterley/memleak
+      - image: litmuschaos/memleak:latest
         name: badapp
         resources:
           limits:
