@@ -5,8 +5,8 @@ metadata:
   namespace: web-services
 spec:
   ports:
-  - port: 81
-    targetPort: 81
+  - port: 80
+    targetPort: 80
   selector:
     app: nginx
 ---
@@ -14,9 +14,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  annotations:
-    app.komodor.com/app: https://github.com/bwilliam79/Komodor-App
-    app.komodor.com/app.ref: 4aa821d
 spec:
   replicas: 3
   revisionHistoryLimit: 3
@@ -32,7 +29,7 @@ spec:
       - image: nginx:latest
         name: nginx
         ports:
-        - containerPort: 81
+        - containerPort: 80
         volumeMounts:
         - name: nginx-index-file
           mountPath: /usr/share/nginx/html/
