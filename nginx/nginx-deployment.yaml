@@ -24,7 +24,7 @@ metadata:
   namespace: web-services
 spec:
   ports:
-  - port: 80
+  - port: 81
   selector:
     app: nginx
 ---
@@ -45,5 +45,5 @@ spec:
           service:
             name: nginx-service
             port:
-              number: 80
+              number: 81
 ---
