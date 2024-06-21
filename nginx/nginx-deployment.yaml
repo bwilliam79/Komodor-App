@@ -35,6 +35,7 @@ metadata:
   name: ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+  namespace: web-services
 spec:
   rules:
   - http:
