@@ -7,8 +7,8 @@ spec:
   containers:
   - image: nginx:latest
     name: nginx
-    ports:
-    - containerPort: 80
+    labels:
+      app: nginx
     volumeMounts:
     - name: nginx-index-file
       mountPath: /usr/share/nginx/html/
@@ -39,7 +39,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /nginx
+      - PathType: Prefix
+        path: /nginx(/|$)(.*)
         backend:
           service:
             name: nginx-service
