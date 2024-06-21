@@ -7,7 +7,7 @@ metadata:
     app: nginx
 spec:
   containers:
-  - image: nginx:latest
+  - image: nginx:latestly
     name: nginx
     volumeMounts:
     - name: nginx-index-file
@@ -24,7 +24,7 @@ metadata:
   namespace: web-services
 spec:
   ports:
-  - port: 81
+  - port: 80
   selector:
     app: nginx
 ---
@@ -45,5 +45,5 @@ spec:
           service:
             name: nginx-service
             port:
-              number: 81
+              number: 80
 ---
