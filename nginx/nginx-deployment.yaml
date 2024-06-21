@@ -5,8 +5,8 @@ metadata:
   namespace: web-services
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 81
+    targetPort: 81
   selector:
     app: nginx
 ---
@@ -29,7 +29,7 @@ spec:
       - image: nginx:latest
         name: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 81
         volumeMounts:
         - name: nginx-index-file
           mountPath: /usr/share/nginx/html/
