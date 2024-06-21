@@ -40,7 +40,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: /nginx(/|$)(.*)
+        path: /nginx
         backend:
           service:
             name: nginx-service
