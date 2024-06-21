@@ -25,7 +25,6 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 80
   selector:
     app: nginx
 ---
@@ -40,11 +39,8 @@ spec:
   rules:
   - http:
       paths:
-      - pathType: Prefix
-        path: /nginx(/|$)(.*)
+      - path: /nginx
         backend:
-          service:
-            name: nginx-service
-            port:
-              number: 80
+          serviceName: nginx-service
+          servicePort: 80
 ---
