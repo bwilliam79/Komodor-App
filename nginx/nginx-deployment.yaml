@@ -1,14 +1,14 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: nginx
+  name: nginx-app
   namespace: web-services
+  labels:
+    app: nginx
 spec:
   containers:
   - image: nginx:latest
     name: nginx
-    labels:
-      app: nginx
     volumeMounts:
     - name: nginx-index-file
       mountPath: /usr/share/nginx/html/
@@ -31,15 +31,15 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: nginx-ingress
+  namespace: web-services
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-  namespace: web-services
 spec:
   rules:
   - http:
       paths:
-      - PathType: Prefix
+      - pathType: Prefix
         path: /nginx(/|$)(.*)
         backend:
           service:
