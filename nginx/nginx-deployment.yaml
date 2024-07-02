@@ -36,7 +36,7 @@ metadata:
   namespace: web-services
 spec:
   ports:
-  - port: 80
+  - port: 808
   selector:
     app: nginx
 ---
