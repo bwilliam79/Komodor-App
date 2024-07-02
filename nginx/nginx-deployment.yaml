@@ -23,7 +23,7 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: nginx-index-file
-          mountPath: /usr/share/nginx/html/y
+          mountPath: /usr/share/nginx/html/
       volumes:
       - name: nginx-index-file
         configMap:
