@@ -20,7 +20,7 @@ spec:
       - image: nginx:latest
         name: nginx
         ports:
-        - containerPort: 88
+        - containerPort: 80
         volumeMounts:
         - name: nginx-index-file
           mountPath: /usr/share/nginx/html/
@@ -36,7 +36,7 @@ metadata:
   namespace: web-services
 spec:
   ports:
-  - port: 88
+  - port: 80
   selector:
     app: nginx
 ---
@@ -57,5 +57,5 @@ spec:
           service:
             name: nginx-service
             port:
-              number: 88
+              number: 80
 ---
