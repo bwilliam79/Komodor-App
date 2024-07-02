@@ -5,6 +5,9 @@ metadata:
   namespace: web-services
   labels:
     app: nginx
+  annotations:
+    app.komodor.com/app: https://github.com/bwilliam79/Komodor-App
+    app.komodor.com/app.ref: 96bba99181c6c19f845e105783a2037244a26066
 spec:
   replicas: 3
   revisionHistoryLimit: 3
