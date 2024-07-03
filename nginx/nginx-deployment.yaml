@@ -6,7 +6,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 5
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -23,7 +23,7 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: nginx-index-file
-          mountPath: /usr/share/nginx/html
+          mountPath: /usr/share/nginx/htmlf
       volumes:
       - name: nginx-index-file
         configMap:
